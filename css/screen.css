@@ -1,6 +1,7 @@
 /*------------------------------------*\
 #FONTS
 \*------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
 
 /*------------------------------------*\
 #Variables
@@ -8,19 +9,42 @@
 
 :root {
     /* colors */
-    --color-alpha-light: MEDIUMSLATEBLUE;
-    --color-alpha: SLATEBLUE;
+    --global-color-alpha-light: #A3A0FB80;
+    --global-color-alpha: #A3A0FB;
 
-    --color-neutral-light: LIGHTSLATEGRAY;
-    --color-neutral: SLATEGRAY;
-    --color-neutral-dark: DARKSLATEGRAY;
+    --global-color-beta: #3B86FF;
+
+    --global-color-neutral-xxxx-light: #F0F0F7;
+    --global-color-neutral-xxx-light: #EBEBF2;
+    --global-color-neutral-xx-light: #D7DAE2;
+    --global-color-neutral-x-light: #BCBCCB;
+    --global-color-neutral-light: #A5A4BF;
+    --global-color-neutral: #808495;
+    --global-color-neutral-dark: #4D4F5C;
+    --global-color-neutral-x-dark: #43425D;
+    --global-color-neutral-xx-dark: #3B3B53;
 
     /* Shadows */
+    /* --global-box-shadow: 0 0 0 1px rgba(0,0,0,.025), 0 2px 6px rgba(0,0,0,.05);
+    --global-box-shadow-lg: 0 0 0 1px rgba(0,0,0,.025), 0 2px 10px rgba(0,0,0,.1);
+
+    --global-input-shadow: 0 2px 3px rgba(0,0,0,.05);
+    --global-input-focus-shadow: 0 0 5px var(--global-color-alpha-light); */
 
     /* border radius */
+    /* --global-borderRadius: 4px; */
 
     /* transitions */
     --transition-alpha: .1s;
+
+    /* Whitespace */
+    --global-baseline: 5px;
+    --global-whitespace-xxs: var(--global-baseline); /* = 5px */
+    --global-whitespace-xs: calc(var(--global-baseline) * 2); /* = 10px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 3); /* = 15px */
+    --global-whitespace-md: calc(var(--global-baseline) * 4); /* = 20px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 5); /* = 25px */
+    --global-whitespace-xl: calc(var(--global-baseline) * 6); /* = 30px */
 }
 
 /*------------------------------------*\
@@ -34,14 +58,58 @@
 */
 
 html {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
+    font-family: 'Source Sans Pro', Helvetica, arial, sans-serif;
     color: var(--color-neutral-dark);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: white;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: calc(var(--global-baseline) * 10);
+    margin: 0 0 var(--global-whitespace-md);
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: normal;
+    line-height: calc(var(--global-baseline) * 8);
+    margin: 0 0 var(--global-whitespace-lg);
+}
+
+h3 {
+    font-size: 26px;
+    line-height: calc(var(--global-baseline) * 6);
+    margin: 0 0 var(--global-whitespace-md);
+}
+
+h4,
+h5,
+h6 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: calc(var(--global-baseline) * 5);
+    margin: 0 0 var(--global-whitespace-md);
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 *,
