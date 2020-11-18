@@ -14,6 +14,7 @@
 
     --global-color-beta: #3B86FF;
 
+    --globalcolor-neutral-xxxxx-light: #FFFFFF;
     --global-color-neutral-xxxx-light: #F0F0F7;
     --global-color-neutral-xxx-light: #EBEBF2;
     --global-color-neutral-xx-light: #D7DAE2;
@@ -25,11 +26,11 @@
     --global-color-neutral-xx-dark: #3B3B53;
 
     /* Shadows */
-    /* --global-box-shadow: 0 0 0 1px rgba(0,0,0,.025), 0 2px 6px rgba(0,0,0,.05);
+    --global-box-shadow: 0 0 0 1px rgba(0,0,0,.025), 0 2px 6px rgba(0,0,0,.05);
     --global-box-shadow-lg: 0 0 0 1px rgba(0,0,0,.025), 0 2px 10px rgba(0,0,0,.1);
 
     --global-input-shadow: 0 2px 3px rgba(0,0,0,.05);
-    --global-input-focus-shadow: 0 0 5px var(--global-color-alpha-light); */
+    --global-input-focus-shadow: 0 0 5px var(--global-color-alpha-light);
 
     /* border radius */
     /* --global-borderRadius: 4px; */
@@ -362,6 +363,57 @@ input::placeholder {
     ---
     Website main logo
 */
+
+.c-logo {
+    margin: 0;
+    line-height: var(--global-whitespace-md);
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFF;
+}
+
+/*
+    Component: c-app
+    ---
+    Website main grid
+*/
+
+.c-app {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+.c-app__logo {
+    background-color: var(--global-color-neutral-xx-dark);
+    padding: var(--global-whitespace-lg);
+}
+
+.c-app__topbar {
+    background-color: var(--global-color-neutral-xxxxx-light);
+    box-shadow: var(--global-box-shadow);
+    z-index: 1;
+}
+
+.c-app__sidebar {
+    background-color: var(--global-color-neutral-x-dark);
+}
+
+.c-app__main {
+    background-color: var(--global-color-neutral-xxxx-light);
+}
+
+/*
+    Component: c-main-nav
+    ---
+    Website main navigation
+*/
+
+.c-main-nav {
+    
+}
 
 /*------------------------------------*\
 #UTILITIES
