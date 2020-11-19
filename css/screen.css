@@ -47,6 +47,8 @@
     --global-whitespace-md: calc(var(--global-baseline) * 4); /* = 20px */
     --global-whitespace-lg: calc(var(--global-baseline) * 5); /* = 25px */
     --global-whitespace-xl: calc(var(--global-baseline) * 6); /* = 30px */
+
+    --c-app__topbar-height: 70px;
 }
 
 /*------------------------------------*\
@@ -414,7 +416,39 @@ input::placeholder {
     .c-app {
         display: grid;
         grid-template-columns: 17rem 1fr;
-        grid-template-rows: 70px 1fr;
+        grid-template-rows: var(--c-app__topbar-height) 1fr;
+    }
+
+    /* 
+        Solution 1:
+        Laat toe om overal te scrollen om de main te laten scrollen.
+        Tenzij de navigatie niet meer helemaal in de viewport past, dan kan je ook in de sidebar scrollen.
+        Zorgt er ook voor dat c-app__main onder .c-app__topbar verdwijnt. 
+    */
+
+    /* .c-app__topbar,
+    .c-app__logo {
+        position: sticky;
+        top: 0;
+    }
+
+    .c-app__sidebar {
+        position: sticky;
+        top: var(--c-app__topbar-height);
+        height: calc(100vh - var(--c-app__topbar-height));
+        overflow: auto;
+    } */
+
+    /* 
+        Solution 2:
+        Zorgt er voor dat je enkel in de main of de sidebar kan scrollen.
+        Is meer 'appy'. 
+    */
+    .c-app__sidebar,
+    .c-app__main {
+        height: calc(100vh - var(--c-app__topbar-height));
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 }
 
