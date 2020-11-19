@@ -37,6 +37,7 @@
 
     /* transitions */
     --transition-alpha: .1s;
+    --transition-beta: 1s;
 
     /* Whitespace */
     --global-baseline: 5px;
@@ -248,7 +249,7 @@ a {
 
 a:visited,
 a:active {
-    color: var(--color-alpha);
+    color: var(--global-color-alpha);
 }
 
 a:hover,
@@ -381,9 +382,6 @@ input::placeholder {
 
 .c-app {
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    grid-template-rows: auto 1fr;
 }
 
 .c-app__logo {
@@ -395,14 +393,29 @@ input::placeholder {
     background-color: var(--global-color-neutral-xxxxx-light);
     box-shadow: var(--global-box-shadow);
     z-index: 1;
+    display: none;
 }
 
 .c-app__sidebar {
     background-color: var(--global-color-neutral-x-dark);
+    display: none;
 }
 
 .c-app__main {
     background-color: var(--global-color-neutral-xxxx-light);
+}
+
+@media (min-width: 992px) {
+    .c-app__topbar,
+    .c-app__sidebar {
+        display: block;
+    }
+
+    .c-app {
+        display: grid;
+        grid-template-columns: 17rem 1fr;
+        grid-template-rows: 70px 1fr;
+    }
 }
 
 /*
@@ -413,6 +426,55 @@ input::placeholder {
 
 .c-main-nav {
     
+}
+
+.c-main-nav__list {
+    margin-bottom: 0;
+}
+
+.c-main-nav__item {
+    margin: var(--global-baseline) 0;
+}
+
+.c-main-nav__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #FFF;
+    font-size: 1rem;
+    line-height: calc(var(--global-baseline) * 4);
+    padding: var(--global-baseline) var(--global-whitespace-lg) var(--global-whitespace-sm) var(--global-whitespace-md);
+    border-left: 5px solid var(--global-color-alpha);
+    transform: translateX(-5px);
+    width: calc(100% + 5px);
+    transition: all var(--transition-beta);
+}
+
+.c-main-nav__link:hover {
+    transition: all var(--transition-alpha);
+}
+
+.c-main-nav__link,
+.c-main-nav__link:hover,
+.c-main-nav__link:visited {
+    color: #FFF;
+}
+
+.c-main-nav__link:hover,
+.c-main-nav__link:focus,
+.is-selected .c-main-nav__link {
+    color: #FFF;
+    background-color: var(--global-color-neutral-xx-dark);
+    transform: none;
+}
+
+.c-main-nav__icon {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: var(--global-whitespace-xs);
+    fill: var(--global-color-neutral-light);
+    transition: fill var(--transition-alpha);
 }
 
 /*------------------------------------*\
