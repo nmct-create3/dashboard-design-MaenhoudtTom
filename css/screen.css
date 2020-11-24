@@ -25,6 +25,9 @@
     --global-color-neutral-x-dark: #43425D;
     --global-color-neutral-xx-dark: #3B3B53;
 
+    /* border */
+    --global-border: 1px solid #CACED5;
+
     /* Shadows */
     --global-box-shadow: 0 0 0 1px rgba(0,0,0,.025), 0 2px 6px rgba(0,0,0,.05);
     --global-box-shadow-lg: 0 0 0 1px rgba(0,0,0,.025), 0 2px 10px rgba(0,0,0,.1);
@@ -33,7 +36,7 @@
     --global-input-focus-shadow: 0 0 5px var(--global-color-alpha-light);
 
     /* border radius */
-    /* --global-borderRadius: 4px; */
+    --global-borderRadius: 4px;
 
     /* transitions */
     --transition-alpha: .1s;
@@ -405,6 +408,7 @@ input::placeholder {
 
 .c-app__main {
     background-color: var(--global-color-neutral-xxxx-light);
+    padding: var(--global-whitespace-xl)
 }
 
 @media (min-width: 992px) {
@@ -511,6 +515,84 @@ input::placeholder {
     transition: fill var(--transition-alpha);
 }
 
+
+/*
+    Component: Dashboard
+    ---
+    Dashboard component with css grid
+*/
+
+.c-dashboard {
+    display: grid;
+    grid-gap: var(--global-whitespace-lg);
+    margin-bottom: var(--global-whitespace-md);
+}
+
+.c-dashboard__item {
+    box-shadow: var(--global-box-shadow);
+    background-color: #fff;
+}
+
+@media screen and (min-width: 992px) {
+    .c-dashboard {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .c-dashboard__item {
+        grid-column: 1 / -1;
+    }
+}
+
+/*
+    Component: card
+    ---
+    Card component for dashboard items
+*/
+
+.c-card {
+    padding: var(--global-whitespace-md);
+}
+
+.c-card__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--global-whitespace-md);
+}
+
+.c-card__title {
+    color: var(--global-color-neutral-dark);
+}
+
+.c-card__body {
+
+}
+
+/*
+    Component: custom select
+    ---
+    Class to make a custom select
+*/
+
+.c-custom-select {
+    display: block;
+}
+
+.c-custom-select__input {
+    box-shadow: var(--global-box-shadow);
+    border: var(--global-border);
+    border-radius: var(--global-borderRadius);
+}
+
+.c-custom-select__symbol {
+    fill: var(--global-color-neutral-light);
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    right: 24px;
+    bottom: 16px;
+    pointer-events: none;
+}
+
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
@@ -611,6 +693,44 @@ input::placeholder {
 
 .u-text-sm {
     font-size: 14px;
+}
+
+/*
+    Utilities: span
+    ---
+    Utility classes to span grid items across the x and y axis
+*/
+
+/* x: horizontal */
+
+@media (min-width: 992px) {
+    .u-x-span-3-bp3 {
+        grid-column: span 3;
+    }
+
+    .u-x-span-4-bp-3 {
+        grid-column: span 4;
+    }
+
+    .u-x-span-6-bp-3 {
+        grid-column: span 6;
+    }
+
+    .u-x-span-8-bp-3 {
+        grid-column: span 8;
+    }
+
+    .u-x-span-9-bp-3 {
+        grid-column: span 9;
+    }
+}
+
+/* y: vertical */
+
+@media (min-width: 992px) {
+    .u-y-span-2-bp3 {
+        grid-row: span 2;
+    }
 }
 
 /*------------------------------------*\
