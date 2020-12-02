@@ -43,7 +43,7 @@
     --transition-beta: 1s;
 
     /* Whitespace */
-    --global-baseline: 5px;
+    --global-baseline: calc(1rem/3);
     --global-whitespace-xxs: var(--global-baseline); /* = 5px */
     --global-whitespace-xs: calc(var(--global-baseline) * 2); /* = 10px */
     --global-whitespace-sm: calc(var(--global-baseline) * 3); /* = 15px */
@@ -52,6 +52,8 @@
     --global-whitespace-xl: calc(var(--global-baseline) * 6); /* = 30px */
 
     --c-app__topbar-height: 70px;
+
+    --global-font-size: 15;
 }
 
 /*------------------------------------*\
@@ -65,8 +67,8 @@
 */
 
 html {
-    font-size: 15px;
-    line-height: 1.5;
+    font-size: 93.75%;
+    line-height: 1.66;
     font-family: 'Source Sans Pro', Helvetica, arial, sans-serif;
     color: var(--color-neutral-dark);
     box-sizing: border-box;
@@ -82,20 +84,20 @@ h3 {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 240%;
     line-height: calc(var(--global-baseline) * 10);
     margin: 0 0 var(--global-whitespace-md);
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 166.66%;
     font-weight: normal;
     line-height: calc(var(--global-baseline) * 8);
     margin: 0 0 var(--global-whitespace-lg);
 }
 
 h3 {
-    font-size: 26px;
+    font-size: 173.33%;
     line-height: calc(var(--global-baseline) * 6);
     margin: 0 0 var(--global-whitespace-md);
 }
@@ -103,7 +105,7 @@ h3 {
 h4,
 h5,
 h6 {
-    font-size: 16px;
+    font-size: 106.66%;
     font-weight: 600;
     line-height: calc(var(--global-baseline) * 5);
     margin: 0 0 var(--global-whitespace-md);
@@ -411,7 +413,7 @@ input::placeholder {
     padding: var(--global-whitespace-xl)
 }
 
-@media (min-width: 992px) {
+@media (min-width: 62em) {
     .c-app__topbar,
     .c-app__sidebar {
         display: block;
@@ -533,7 +535,7 @@ input::placeholder {
     background-color: #fff;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 62em) {
     .c-dashboard {
         grid-template-columns: repeat(12, 1fr);
     }
@@ -703,7 +705,7 @@ input::placeholder {
 
 /* x: horizontal */
 
-@media (min-width: 992px) {
+@media (min-width: 62em) {
     .u-x-span-3-bp3 {
         grid-column: span 3;
     }
@@ -727,7 +729,7 @@ input::placeholder {
 
 /* y: vertical */
 
-@media (min-width: 992px) {
+@media (min-width: 62em) {
     .u-y-span-2-bp3 {
         grid-row: span 2;
     }
